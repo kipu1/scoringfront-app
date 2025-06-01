@@ -1,0 +1,24 @@
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+@Injectable({ providedIn: 'root' })
+export class ScoringService {
+  private baseUrl = 'http://localhost:8080/scoring';
+
+  constructor(private http: HttpClient) {}
+
+  enviarDatos(dto: { edad: number; ingreso: number }): Observable<any> {
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${token ?? ''}`,
+    });
+
+    return this.http.post(`${this.baseUrl}/datos`, dto, { headers });
+  }
+
+  obtenerScore(): Observable<{ score: number }> {
+    return this.http.get<{ score: number }>(this.baseUrl);
+  }
+}

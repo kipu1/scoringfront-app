@@ -1,0 +1,17 @@
+<div class="photo-container">
+  <h2>Captura tu Foto</h2>
+
+  <div class="webcam-wrapper">
+    <webcam [trigger]="trigger" (imageCapture)="handleImage($event)"></webcam>
+  </div>
+
+  <button class="btn-primary" (click)="triggerSnapshot()">Capturar</button>
+
+  <div *ngIf="webcamImage" class="preview-section">
+    <h3>Vista previa:</h3>
+    <img [src]="webcamImage.imageAsDataUrl" alt="Foto Capturada" />
+    <button class="btn-primary btn-upload" (click)="subirFoto()">
+      Subir Foto
+    </button>
+  </div>
+</div>

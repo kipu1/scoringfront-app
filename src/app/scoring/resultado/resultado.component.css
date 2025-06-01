@@ -1,0 +1,83 @@
+.result-form-container {
+  max-width: 800px;
+  margin: auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  font-family: "Segoe UI", sans-serif;
+}
+
+h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+}
+
+.user-info-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.user-details {
+  flex: 1 1 300px;
+}
+
+.user-details p {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
+
+.user-photo img {
+  max-width: 250px;
+  border-radius: 12px;
+  border: 2px solid #ccc;
+}
+
+.logout-button {
+  margin-top: 2rem;
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #e74c3c;
+  color: #fff;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.logout-button:hover {
+  background-color: #c0392b;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .user-info-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.form-container {
+  max-width: 500px;
+  margin: auto;
+  background: #f3faff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.user-photo {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 12px;
+  margin-top: 10px;
+}

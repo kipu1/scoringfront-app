@@ -1,0 +1,54 @@
+<div class="form-container">
+  <h2>Resultado del Scoring</h2>
+
+  <div class="form-group">
+    <label>Nombre:</label>
+    <p>
+      <strong>{{ nombre }}</strong>
+    </p>
+  </div>
+
+  <div class="form-group">
+    <label>Email:</label>
+    <p>
+      <strong>{{ email }}</strong>
+    </p>
+  </div>
+
+  <div class="form-group">
+    <label>Edad:</label>
+    <p>
+      <strong>{{ edad }}</strong>
+    </p>
+  </div>
+
+  <div class="form-group">
+    <label>Ingreso mensual:</label>
+    <p>
+      <strong>${{ ingreso }}</strong>
+    </p>
+  </div>
+
+  <div class="form-group">
+    <label>Score obtenido:</label>
+    <p>
+      <strong>{{ score }}</strong>
+    </p>
+  </div>
+
+  <div class="form-group">
+    <label>Nivel de riesgo:</label>
+    <p>
+      <strong>{{ riesgo }}</strong>
+    </p>
+  </div>
+
+  <div class="form-group" *ngIf="foto">
+    <label>Foto:</label>
+    <img [src]="foto" alt="Foto del usuario" class="user-photo" />
+  </div>
+
+  <button class="btn-primary logout-button" (click)="logout()">
+    Cerrar sesión
+  </button>
+</div>
