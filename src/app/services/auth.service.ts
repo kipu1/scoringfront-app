@@ -14,8 +14,11 @@ export class AuthService {
   login(data: {
     email: string;
     password: string;
-  }): Observable<{ token: string }> {
-    return this.http.post<{ token: string }>(`${this.baseUrl}/login`, data);
+  }): Observable<{ token: string; nombre: string }> {
+    return this.http.post<{ token: string; nombre: string }>(
+      `${this.baseUrl}/login`,
+      data
+    );
   }
 
   /**

@@ -25,8 +25,8 @@ export class LoginComponent {
         this.auth.saveToken(res.token);
         const decoded: any = jwtDecode(res.token);
 
-        localStorage.setItem('nombre', decoded.nombre);
-        localStorage.setItem('email', decoded.sub); // o decoded.email
+        localStorage.setItem('nombre', res.nombre); // Ahora tomamos 'nombre' directamente de la respuesta
+        localStorage.setItem('email', decoded.sub);
         this.router.navigate(['/datos']);
       },
       error: () => alert('Credenciales inválidas'),
