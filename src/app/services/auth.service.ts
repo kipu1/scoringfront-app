@@ -59,4 +59,7 @@ export class AuthService {
   isLoggedIn(): boolean {
     return !!this.getToken();
   }
+  editarUsuario(datos: { nombre: string; email: string }) {
+    return this.http.put('http://localhost:8080/auth/editar-usuario', datos);
+  }
 }

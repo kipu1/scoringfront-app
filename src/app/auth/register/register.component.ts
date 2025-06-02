@@ -25,12 +25,18 @@ export class RegisterComponent {
       email: this.email,
       password: this.password,
     };
+
     this.auth.register(usuario).subscribe({
       next: (res: any) => {
-        localStorage.setItem('nombre', this.nombre);
-        localStorage.setItem('email', this.email);
-        alert(res.mensaje ?? 'Usuario registrado');
+        alert(res.mensaje); // ✅ muestra "Usuario registrado con éxito"
         this.router.navigate(['/login']);
+      },
+      error: (err) => {
+        if (err.status === 400 && typeof err.error === 'string') {
+          alert(err.error); // ejemplo: "El correo ya está siendo utilizado"
+        } else {
+          alert('Error inesperado: ' + err.message);
+        }
       },
     });
   }

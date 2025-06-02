@@ -133,14 +133,6 @@ td {
   text-align: left;
 }
 
-input[type="number"] {
-  width: 100%;
-  padding: 6px 10px;
-  font-size: 1rem;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-}
-
 .actions {
   margin-top: 20px;
   display: flex;
@@ -273,10 +265,6 @@ input[type="number"] {
     top: 10px;
     font-weight: 700;
     white-space: nowrap;
-  }
-
-  input[type="number"] {
-    font-size: 1rem;
   }
 
   .actions {

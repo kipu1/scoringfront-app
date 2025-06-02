@@ -9,7 +9,7 @@
         [(ngModel)]="edad"
         name="edad"
         required
-        min="0"
+        min="1"
         #edadInput="ngModel"
       />
       <div *ngIf="edadInput.invalid && edadInput.touched" class="error">
@@ -25,7 +25,7 @@
         [(ngModel)]="ingreso"
         name="ingreso"
         required
-        min="0"
+        min="1"
         #ingresoInput="ngModel"
       />
       <div *ngIf="ingresoInput.invalid && ingresoInput.touched" class="error">
