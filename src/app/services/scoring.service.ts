@@ -21,4 +21,18 @@ export class ScoringService {
   obtenerScore(): Observable<{ score: number }> {
     return this.http.get<{ score: number }>(this.baseUrl);
   }
+  editarDatos(dto: { edad: number; ingreso: number }): Observable<any> {
+    const token = localStorage.getItem('token') ?? '';
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${token}`,
+    });
+    return this.http.put(`${this.baseUrl}/datos`, dto, { headers });
+  }
+
+  eliminarDatos(): Observable<any> {
+    const token = localStorage.getItem('token') ?? '';
+    const headers = new HttpHeaders({ Authorization: `Bearer ${token}` });
+    return this.http.delete(this.baseUrl, { headers });
+  }
 }
