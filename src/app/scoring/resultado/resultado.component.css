@@ -203,14 +203,25 @@ td {
 }
 
 .modal-content {
-  background: white;
+  background-color: white;
   padding: 20px;
-  border-radius: 8px;
-  max-width: 480px;
-  width: 100%;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  width: 90vw;
+  max-width: 400px;
+  margin-left: 5vw; /* empuja un poco desde la izquierda */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+  max-height: 90vh;
 }
 
+.modal-content video,
+.modal-content canvas {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
 .webcam-wrapper {
   width: 100%;
   aspect-ratio: 4/3;
@@ -277,4 +288,33 @@ td {
   .btn-secondary {
     width: 100%;
   }
+}
+.foto-cell {
+  display: flex;
+  align-items: center; /* Centra verticalmente */
+  gap: 12px; /* Espacio entre imagen y botón */
+  max-width: 220px; /* Limita ancho máximo de la celda */
+}
+
+.foto-cell img {
+  max-width: 100px; /* Máximo ancho */
+  max-height: 100px; /* Máximo alto */
+  object-fit: cover; /* Recorta para no deformar */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); /* Sombra sutil */
+  border: 1px solid #ccc; /* Borde ligero */
+  flex-shrink: 0; /* No se encoja */
+}
+
+.btn-primary.btn-small {
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  height: 36px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-primary.btn-small:hover {
+  background-color: #0056b3;
 }
